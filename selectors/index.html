@@ -65,15 +65,33 @@
         <li>list item</li>
         <li>list item</li>
       </ul>
+      <div>
+        <input type="button" value="Button" />
+        <input type="submit" value="Submit" />
+        <input type="text" />
+      </div>
 
-      <input type="button" value="Button" />
-      <input type="submit" value="Submit" />
-      <input type="text" />
+      <div class="mt-5">
+        <a href="https://google.com" target="_blank">Google</a>
+        <a href="https://duckduckgo.com" target="_blank">Duck Duck Go</a>
+      </div>
 
-      <a href="https://google.com" target="_blank">Google</a>
-      <a href="https://duckduckgo.com" target="_blank">Duck Duck Go</a>
+      <div class="mt-1">
+        <div>
+          <label>
+            <input type="radio" value="hot-fuzz" />
+            <span>name?</span>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="radio" value="dire-wolf" />
+            <span>value?</span>
+          </label>
+        </div>
+      </div>
     </div>
-
     <script>
       // $('h1').hide();
       // $('h1#heading-1').hide();
@@ -88,9 +106,18 @@
 
       $(':submit').hide();
 
+      $('.mt-1').css('margin-top', '1em');
+
       $('[href="https://google.com"]')
         .css('background', 'blue')
         .css('color', 'yellow');
+
+      $('input[value="hot-fuzz"]')
+        .next()
+        .text('🍺🍺🍺🍺🍺🍺');
+      $('input[value="dire-wolf"]')
+        .next()
+        .text('🐶🐶🐶🐶🐶🐶');
     </script>
   </body>
 </html>
