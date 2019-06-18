@@ -11,6 +11,13 @@
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      // to run JS on top, use document.ready()
+      $(document).ready(() => {
+        $('#btn1').click(() => alert('Button 1 clicked'));
+      });
+    </script>
+
     <style>
       body {
         font-family: 'Courier New', Courier, monospace;
@@ -65,6 +72,7 @@
         <li>list item</li>
         <li>list item</li>
       </ul>
+
       <div>
         <input type="button" value="Button" />
         <input type="submit" value="Submit" />
@@ -92,6 +100,7 @@
         </div>
       </div>
     </div>
+
     <script>
       // $('h1').hide();
       // $('h1#heading-1').hide();
