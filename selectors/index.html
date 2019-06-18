@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        background: lightgreen;
+        line-height: 1.5em;
+        font-size: 17px;
+      }
+
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+
+      /* .span-color {
+        background: #000;
+      } */
+    </style>
+  </head>
+  <body>
+    <header><h1>jQuery crash course</h1></header>
+    <div id="container">
+      <h1 id="heading-1">Heading 1</h1>
+      <p id="para-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <span class="span-color-bk">Lorem ipsum dolor sit amet.</span>
+        Fugit, alias.
+      </p>
+
+      <h1 class="heading-2">Heading 2</h1>
+      <p class="para-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <span class="span-color-magenta"
+          >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span
+        >
+        Fugit, alias.
+      </p>
+
+      <ul id="list">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+      </ul>
+
+      <input type="button" value="Button" />
+      <input type="submit" value="Submit" />
+      <input type="text" />
+
+      <a href="https://google.com" target="_blank">Google</a>
+      <a href="https://duckduckgo.com" target="_blank">Duck Duck Go</a>
+    </div>
+
+    <script>
+      // $('h1').hide();
+      // $('h1#heading-1').hide();
+      // $('.heading-2').hide();
+      // $('p span').css('background', '#000');
+      $('.span-color-bk').css('background', '#000');
+      $('.span-color-magenta').css('background', 'magenta');
+
+      $('li:first').css('background', 'orange');
+      $('ul#list li:nth-of-type(odd)').css('color', 'red');
+      $('ul#list li:nth-child(even)').css('list-style', 'none');
+
+      $(':submit').hide();
+
+      $('[href="https://google.com"]')
+        .css('background', 'blue')
+        .css('color', 'yellow');
+    </script>
+  </body>
+</html>
