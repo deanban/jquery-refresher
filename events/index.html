@@ -73,7 +73,7 @@
       <hr />
 
       <div style="margin-top: 1.5em">
-        <form>
+        <form id="form">
           <label>Name</label>
           <input type="text" id="name" name="name" />
           <br />
@@ -81,29 +81,54 @@
           <label>Email</label>
           <input type="text" id="email" name="email" />
           <br />
+
+          <label>Gender</label>
+          <select id="gender" name="gender">
+            <option value="boy">Boy</option>
+            <option value="girl">Girl</option>
+            <option value="fluid">Fluid</option>
+          </select>
+          <br />
+
+          <input type="submit" />
         </form>
       </div>
     </div>
 
     <script>
-      $('#btn2').click(() => $('.para1').toggle());
+      // $('#btn2').click(() => $('.para1').toggle());
 
-      $('#btn3').dblclick(() => alert('Button 3 double clicked'));
+      // $('#btn3').dblclick(() => alert('Button 3 double clicked'));
 
-      //hover is actually two separate events- mouseenter and mouseleave
+      // //hover is actually two separate events- mouseenter and mouseleave
 
-      // $('.para1').hover(() => $('.para1').css('background', 'magenta'));
-      $('.para1').mouseenter(() => $('.para1').css('background', 'orange'));
-      $('.para1').mouseleave(() => $('.para1').css('background', 'none'));
+      // // $('.para1').hover(() => $('.para1').css('background', 'magenta'));
+      // $('.para1').mouseenter(() => $('.para1').css('background', 'orange'));
+      // $('.para1').mouseleave(() => $('.para1').css('background', 'none'));
 
-      $('#btn4').click(event => console.log(event.currentTarget));
-      $('#btn5').click(event => console.log(event.currentTarget.outerHTML));
+      // $('#btn4').click(event => console.log(event.currentTarget));
+      // $('#btn5').click(event => console.log(event.currentTarget.outerHTML));
 
       // $(document).on('mousemove', event => {
       //   $('.mouse-coords')
       //     .next()
       //     .text('Y: ' + event.clientY + ' X: ' + event.clientX);
       // });
+
+      $('form input').focus(function() {
+        $(this).css('background', 'yellow');
+      });
+
+      $('form input').blur(function() {
+        $(this).css('background', 'white');
+      });
+
+      $('select#gender').change(e => alert(e.target.value));
+
+      $('#form').submit(e => {
+        e.preventDefault();
+        console.log('submitted');
+      });
     </script>
   </body>
 </html>
