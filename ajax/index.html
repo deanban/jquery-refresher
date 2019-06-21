@@ -48,6 +48,17 @@
     <div id="container">
       <div id="result">
         <ul id="users"></ul>
+        <h3>Add Post</h3>
+        <form
+          class="post-form"
+          action="https://jsonplaceholder.typicode.com/posts"
+        >
+          <input type="text" class="title-input" placeholder="title" />
+          <br />
+          <textarea placeholder="body" class="post-body"></textarea>
+          <br />
+          <input type="submit" value="submit" />
+        </form>
       </div>
     </div>
   </body>
@@ -67,6 +78,40 @@
       //   });
       // });
       // $('ul#users li:nth-child(even)').css('background', 'orange');
+
+      // $.ajax({
+      //   method: 'GET',
+      //   url: 'https://jsonplaceholder.typicode.com/posts',
+      //   dataType: 'json'
+      // }).done(data => {
+      //   console.log(data);
+      //   $.map(data, (post, i) => {
+      //     $('#result').append(
+      //       '<h3>' + post.title + '</h3><p>' + post.body + '</p>'
+      //     );
+      //   });
+      // });
+
+      $('.post-form').submit(e => {
+        e.preventDefault();
+
+        const title = $('.title-input').val();
+        const body = $('.post-body').val();
+
+        const uri = $(this).attr('action');
+
+        $.post(uri, { title: title, body: body }).done(data => {
+          console.log(data);
+        });
+        // $.ajax({
+        //   method: 'POST',
+        //   url: uri,
+        //   data: { title: title, body: body },
+        //   headers: {
+        //     'Content-type': 'application/json; charset=UTF-8'
+        //   }
+        // });
+      });
     });
   </script>
 </html>
