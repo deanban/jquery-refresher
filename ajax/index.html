@@ -4,7 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.js"
+      integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
     <title>AJAX</title>
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        background: lightgreen;
+        line-height: 1.5em;
+        font-size: 17px;
+      }
+
+      header {
+        background: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 4px #000 solid;
+        margin-bottom: 10px;
+      }
+
+      #container {
+        width: 90%;
+        margin: auto;
+        padding: 10px;
+      }
+
+      /* .span-color {
+            background: #000;
+          } */
+    </style>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>jQuery crash course | AJAX</h1>
+    </header>
+
+    <div id="container">
+      <div id="result">
+        <ul id="users"></ul>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    $(document).ready(function() {
+      // $('#result').load('test.html', (resTxt, statText, xhr) => {
+      //   if (statText === 'success') alert('it went fine');
+      //   else if (statText === 'error') alert('error: ' + xhr.statusText);
+      // });
+      // $.get('test.html', markup => {
+      //   $('#result').html(markup);
+      // });
+      // $.getJSON('data.json', data => {
+      //   $.each(data, (i, person) => {
+      //     $('ul#users').append('<li>' + person.name + '</li>');
+      //   });
+      // });
+      // $('ul#users li:nth-child(even)').css('background', 'orange');
+    });
+  </script>
 </html>
